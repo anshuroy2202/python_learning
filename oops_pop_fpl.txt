@@ -1,0 +1,43 @@
+https://chatgpt.com/c/6a292a4d-7058-83a2-90c1-73bc784dd379
+
+questions
+----------->
+1. why python is used ?
+2. prepare for the interview qustions regarding python 
+
+
+
+Notes...
+----------->
+1. python main.py  to run the python file using command lines
+2. python --vesion 
+
+or use simple py instead of python
+
+
+
+creating a vitual environment
+------------------------------>
+python -m venv venv   or  py -m venv venv
+
+venv\Scripts\activate    to activate 
+
+Your folder structure will look like:
+myproject/
+│
+├── venv/
+├── app.py
+
+deactivate
+
+where python   to verify 
+
+
+
+python -m pip install numpy   to install anything inside the venv
+
+
+to activate python in command
+python
+and then simple type
+exit() or quit()  to stop

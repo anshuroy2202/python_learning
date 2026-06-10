@@ -1,0 +1,236 @@
+Suppose you have a folder like:
+
+```txt
+amrutha project/
+│
+├── app.py
+├── requirements.txt
+├── backend/
+│   ├── routes.py
+│   └── models.py
+├── frontend/
+│   ├── index.html
+│   └── style.css
+└── README.md
+```
+
+and you want **everything inside it** (all files and subfolders) pushed to GitHub.
+
+### 1. Open Terminal in that folder
+
+```powershell
+cd "C:\Users\anshu\OneDrive\Desktop\amrutha project"
+```
+
+Verify:
+
+```powershell
+dir
+```
+
+You should see your files and folders.
+
+---
+
+### 2. Initialize Git (only once)
+
+```powershell
+git init
+```
+
+---
+
+### 3. Connect your GitHub repository
+
+If no remote exists:
+
+```powershell
+git remote add origin https://github.com/USERNAME/REPO.git
+```
+
+If a remote already exists:
+
+```powershell
+git remote -v
+```
+
+to check it.
+
+---
+
+### 4. Add ALL files and folders
+
+```powershell
+git add .
+```
+
+The `.` means:
+
+> Add everything in the current folder and all subfolders recursively.
+
+---
+
+### 5. Check what Git found
+
+```powershell
+git status
+```
+
+Example:
+
+```txt
+new file: app.py
+new file: backend/routes.py
+new file: frontend/index.html
+```
+
+If you don't see your files here, Git is not tracking them.
+
+---
+
+### 6. Commit
+
+```powershell
+git commit -m "Added complete project"
+```
+
+---
+
+### 7. Push
+
+First time:
+
+```powershell
+git branch -M main
+git push -u origin main
+```
+
+Later updates:
+
+```powershell
+git add .
+git commit -m "Updated project"
+git push
+```
+
+---
+
+### Very important check
+
+Before committing, run:
+
+```powershell
+git status
+```
+
+If it says:
+
+```txt
+nothing to commit, working tree clean
+```
+
+then Git does not see any new files.
+
+If it says:
+
+```txt
+Changes to be committed:
+```
+
+then those files will be uploaded.
+
+---
+
+For your current project, run:
+
+```powershell
+git status
+```
+
+and paste the output. That will immediately tell us why only `README.md` was uploaded and whether the rest of the folder is being ignored, not added, or blocked by `.gitignore`.
+
+
+
+
+Run this command:
+
+```powershell
+git remote -v
+```
+
+### If a remote exists
+
+You'll see something like:
+
+```txt
+origin  https://github.com/anshuroy2202/api_report.git (fetch)
+origin  https://github.com/anshuroy2202/api_report.git (push)
+```
+
+That means:
+
+* `origin` = remote name
+* GitHub repo is already connected
+
+---
+
+### If no remote exists
+
+You'll see:
+
+```txt
+<no output>
+```
+
+or just return to the prompt.
+
+That means you need to add one:
+
+```powershell
+git remote add origin https://github.com/USERNAME/REPO.git
+```
+
+---
+
+### To see only the remote names
+
+```powershell
+git remote
+```
+
+Example:
+
+```txt
+origin
+```
+
+---
+
+### To check exactly which repository you're connected to
+
+```powershell
+git remote get-url origin
+```
+
+Example:
+
+```txt
+https://github.com/anshuroy2202/api_report.git
+```
+
+For your current project, run:
+
+```powershell
+git remote -v
+```
+
+and
+
+```powershell
+git status
+```
+
+Then paste both outputs. That will show:
+
+1. Whether the GitHub repository is connected.
+2. Whether your project files are actually being tracked by Git.
