@@ -115,3 +115,22 @@ print(name[::2])  # AsuKmrRy (every second character)
 
 print(name+2)  # TypeError: can only concatenate str (not "int") to str
 print(name +str(2))  # Anshu Kumar Roy2 (concatenating string with number)
+
+print(50*'*')
+# ------------------------------------------------------------------
+# List
+# list is a collection which is ordered and changeable. Allows duplicate members.
+my_list = [1, 2, 3, "Anshu", [4, 5], (6, 7), {"name": "Anshu"}, {8, 9}]
+print(my_list[0])  # 1
+print(my_list[3])  # Anshu
+print(my_list[4])  # [4, 5]
+print(my_list[5])  # (6, 7)
+print(my_list[6])  # {'name': 'Anshu'}
+print(my_list[7])  # {8, 9}
+print(len(my_list))  # 8
+my_list.append(10)  # [1, 2, 3, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 10]
+my_list.insert(1, "Hello")  # [1, 'Hello', 2, 3, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 10]
+my_list.remove(3)  # [1, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 10]
+my_list.pop()  # [1, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}]
+my_list[0] = 100  # [100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}]
+print(my_list)
