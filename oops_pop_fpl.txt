@@ -41,3 +41,6 @@ to activate python in command
 python
 and then simple type
 exit() or quit()  to stop
+
+to run a python command using the notepad we name demo.txt
+python demo.txt is enough to run but it is good to use the python extention as demo.py
