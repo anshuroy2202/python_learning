@@ -113,7 +113,7 @@ print(name.center(30, "*"))  # *****Anshu Kumar Roy*****
 print('reversing the string:',name[::-1])  # yoR ramuK uhnsA (reverses the string)
 print(name[::2])  # AsuKmrRy (every second character)
 
-print(name+2)  # TypeError: can only concatenate str (not "int") to str
+# print(name+2)  # TypeError: can only concatenate str (not "int") to str
 print(name +str(2))  # Anshu Kumar Roy2 (concatenating string with number)
 
 print(50*'*')
@@ -134,3 +134,153 @@ my_list.remove(3)  # [1, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'},
 my_list.pop()  # [1, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}]
 my_list[0] = 100  # [100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}]
 print(my_list)
+
+
+print(my_list + [11, 12])  # [100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 11, 12]
+print(my_list * 2)  # [100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}]    
+print(my_list[1:4])  # ['Hello', 2, 'Anshu']
+print(my_list[::-1])  # [{8, 9}, {'name': 'Anshu'}, (6, 7), [4, 5], 'Anshu', 2, 'Hello', 100] (reverses the list)
+print(len(my_list))  # 8
+
+
+my_list.append([13, 14])  # [100, 'Hello', 2, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, [13, 14]]
+my_list.count(2)  # 1
+my_list.index("Anshu")  # 3
+# my_list.sort()  # TypeError: '<' not supported between instances of 'str' and 'int'
+my_list.reverse()  # [{8, 9}, {'name': 'Anshu'}, (6, 7), [4, 5], 'Anshu', 2, 'Hello', 100] (reverses the list)
+my_list.remove("Hello")  # [{8, 9}, {'name': 'Anshu'}, (6, 7), [4, 5], 'Anshu', 2, 100] (removes the first occurrence of "Hello")
+my_list.clear()  # [] (clears the list)
+
+# multiple values addition and deletion
+my_list.extend([13, 14]) # [13, 14] (adds multiple values to the end of the list)
+my_list += [15, 16] # [13, 14, 15, 16] (adds multiple values to the end of the list)
+my_list.append([17, 18]) # [13, 14, 15, 16, [17, 18]] (adds a list as a single element to the end of the list)
+del my_list[2:6] # deletes the elements from index 2 to 5
+print(my_list)  # [{8, 9}, {'name': 'Anshu'}, 100] (after deleting elements from index 2 to 5)
+
+
+print(50*'*')
+# -------------------------------------------------------------------
+# TUPLE
+# tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+# A tuple is immutable, which means you cannot change, add, or remove elements after the tuple is created
+# A tuple is immutable. We cannot add, remove, or modify its elements after creation. If it seems like we are adding elements using +, Python is actually creating a new tuple rather than modifying the existing one.
+
+my_tuple = (1, 2, 3, "Anshu", [4, 5], (6, 7), {"name": "Anshu"}, {8, 9})
+print(my_tuple[0])  # 1
+print(my_tuple[3])  # Anshu
+print(my_tuple[4])  # [4, 5]
+print(my_tuple[5])  # (6, 7)
+print(my_tuple[6])  # {'name': 'Anshu'}
+print(my_tuple[7])  # {8, 9}    
+print(len(my_tuple))  # 8
+
+# A new tuple  is  created.
+print(my_tuple + (10, 11))  # (1, 2, 3, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 10, 11)
+print(my_tuple * 2)  # (1, 2, 3, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9}, 1, 2, 3, 'Anshu', [4, 5], (6, 7), {'name': 'Anshu'}, {8, 9})
+print(my_tuple[1:4])  # (2, 3, 'Anshu')
+print(my_tuple[::-1])  # ({8, 9}, {'name': 'Anshu'}, (6, 7), [4, 5], 'Anshu', 3, 2, 1) (reverses the tuple)
+print(len(my_tuple))  # 8
+print(my_tuple.count(2))  # 1
+print(my_tuple.index("Anshu"))  # 3
+print(my_tuple)
+
+
+t = ([1, 2], [3, 4])
+
+t[0].append(5)
+print(t) # ([1, 2, 5], [3, 4])
+# Because the tuple itself did not change. The tuple still contains two list objects. Lists are mutable, so the contents of the list can change even though the tuple cannot.
+
+
+t1= (1, 2, 3)
+a, b, c = t1
+print(a,b,c)  # 1 2 3 (unpacking the tuple into variables)
+
+print(3 in t1)  # True (membership operator)
+
+# IMPORTANT: 
+# If a tuple contains only one element, it must have a comma after the element to be recognized as a tuple. Otherwise, it will be treated as a regular value enclosed in parentheses.
+t2 = (1)  # This is not a tuple, it's just the integer 1 enclosed in parentheses.
+print(type(t2))  # <class 'int'>
+t3 = (1,)  # This is a tuple with one element.
+print(type(t3))  # <class 'tuple'>
+
+print(50*'*')
+# -----------------------------------------------------------------
+# SET
+# set is a collection which is unordered and unindexed. No duplicate members so duplicates are automatically removed.
+# set stores the elements in a hash table, which allows for fast membership testing and eliminates duplicates. When you create a set, it automatically removes any duplicate elements, ensuring that each element is unique within the set. This is why sets do not allow duplicate members. If you try to add a duplicate element to a set, it will simply ignore the duplicate and keep only one instance of that element in the set.
+
+my_set = {1, 2, 3, "Anshu", (4, 5), frozenset({6, 7}), frozenset({"name": "Anshu"}), frozenset({8, 9})}
+print(1 in my_set)  # True (membership operator)
+print("Anshu" in my_set)  # True (membership operator)
+print(len(my_set))  # 8
+
+# Adds one single element to a set.
+my_set.add(10)  # {1, 2, 3, 'Anshu', (4, 5), frozenset({6, 7}), frozenset({'name': 'Anshu'}), frozenset({8, 9}), 10}
+
+# Adds multiple elements from another iterable (list, tuple, set, string, etc.).
+my_set.update({11, 12})  # {1, 2, 3, 'Anshu', (4, 5), frozenset({6, 7}), frozenset({'name': 'Anshu'}), frozenset({8, 9}), 10, 11, 12}
+my_set.remove(3)  # {1, 2, 'Anshu', (4, 5), frozenset({6, 7}), frozenset({'name': 'Anshu'}), frozenset({8, 9}), 10, 11, 12} (removes the element 3)
+my_set.discard(4)  # {1, 2, 'Anshu', (4, 5), frozenset({6, 7}), frozenset({'name': 'Anshu'}), frozenset({8, 9}), 10, 11, 12} (does nothing because 4 is not in the set)
+my_set.pop()  # removes and returns an arbitrary element from the set
+print(my_set)  # {2, 'Anshu', (4, 5), frozenset({6, 7}), frozenset({'name': 'Anshu'}), frozenset({8, 9}), 10, 11, 12} (after popping an element)
+my_set.clear()  # set() (clears the set)
+
+set1={}
+print(type(set1))  # <class 'dict'> (because {} creates an empty dictionary, not a set)
+set2=set()
+print(type(set2))  # <class 'set'> (because set() creates an empty set)
+
+
+# remove all the chaarcters from the string except the vowels using set
+string = set("Anshu Kumar Roy")
+vowels = set("AEIOUaeiou")
+result = string.intersection(vowels)
+print(result)  # {'a', 'u', 'o'} (the vowels present in the string)
+print(string.difference(vowels))  # {' ', 'n', 'h', 's', 'K', 'm', 'r', 'R', 'y'} (the characters in the string that are not vowels )
+print(string.union(vowels))  # {' ', 'n', 'h', 's', 'K', 'm', 'r', 'R', 'y', 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'} (all unique characters from both sets  )
+print(string.symmetric_difference(vowels))  # {' ', 'n', 'h', 's', 'K', 'm', 'r', 'R', 'y', 'A', 'E', 'I', 'O', 'U', 'e', 'i'} (characters that are in either set but not in both)
+# -(difference) |(union) &(intersection) ^(symmetric_difference)
+# (which are not present in the other set) (which are present in either set) (which are present in both sets) (which are present in one set but not both sets)
+
+
+print(50*'*')
+# --------------------------------------------------------------------
+
+# DICTIONARY
+# dict is a collection which is unordered, changeable and indexed. No duplicate members.
+my_dict = {"name": "Anshu", "age": 21, "city": "Kolkata", "hobbies": ["coding", "gaming"], "education": {"degree": "B.Tech", "field": "CSE"}, "is_student": True}
+print(my_dict["name"])  # Anshu
+print(my_dict["age"])  # 21
+print(my_dict["hobbies"])  # ['coding', 'gaming']
+print(my_dict["education"])  # {'degree': 'B.Tech', 'field': 'CSE'}
+print(len(my_dict))  # 6
+my_dict["name"] = "Anshul"  # {'name': 'Anshul', 'age': 21, 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True} (updates the value of the key "name")
+my_dict["country"] = "India"  # {'name': 'Anshul', 'age': 21, 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True, 'country': 'India'} (adds a new key-value pair to the dictionary)
+print(my_dict)
+
+my_dict['is_married'] = False  # {'name': 'Anshul', 'age': 21, 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True, 'country': 'India', 'is_married': False} (adds a new key-value pair to the dictionary)
+my_dict.pop("age")  # {'name': 'Anshul', 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True, 'country': 'India', 'is_married': False} (removes the key "age" and its associated value)
+my_dict.popitem()  # {'name': 'Anshul', 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True, 'country': 'India'} (removes the last inserted key-value pair)
+print(my_dict)  
+# multiple key-value pairs addition and deletion
+my_dict.update({"age": 21, "is_married": False})  # {'name': 'Anshul', 'city': 'Kolkata', 'hobbies': ['coding', 'gaming'], 'education': {'degree': 'B.Tech', 'field': 'CSE'}, 'is_student': True, 'country': 'India', 'age': 21, 'is_married': False} (updates the dictionary with the key-value pairs from another dictionary)
+print(my_dict)
+
+# print(my_dict[2]) # KeyError: 2 (because there is no key 2 in the dictionary, dictionaries are accessed by keys, not by index)
+print(my_dict.get(2)) # None (because there is no key 2 in the dictionary, get() method returns None if the key is not found)
+print(my_dict.get(2,'Not found'))
+
+# key is a collection of set and frozenset because they are immutable and can be hashed, which allows them to be used as keys in a dictionary. Lists and dictionaries cannot be used as keys because they are mutable and cannot be hashed.
+dict1={'a':1, 'b':2, 'c':3,'a':4} # {'a': 4, 'b': 2, 'c': 3} (because keys must be unique in a dictionary, the second occurrence of 'a' overwrites the first one)
+print(dict1)
+
+# values can be of any data type and can be duplicated, but keys must be unique and immutable (cannot be changed after creation). If you try to use a mutable data type (like a list or a dictionary) as a key, it will raise a TypeError because mutable types cannot be hashed.
+
+keys=[1, 2, 3]
+values=['one', 'two', 'three']
+my_dict2=dict(zip(keys, values)) # {1: 'one', 2: 'two', 3: 'three'} (creates a dictionary by zipping together two lists of keys and values)
+print(my_dict2)
+
