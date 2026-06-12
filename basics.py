@@ -46,32 +46,89 @@ y = x
 print(x is y)          # Identity
 
 print(50*'*')
+
+
 # -----------------------------------------------------------
 # data types
 
 # Numeric Types
+# ----------------
 # int, float, complex
+x=6
+pi=3.14
+z=2+3j
+print(type(x))  # <class 'int'>
+print(type(pi))  # <class 'float'>  
+print(type(z))  # <class 'complex'>
+complex_num = complex(2, 3)  # creates a complex number with real part 2 and imaginary part 3
+print(complex_num)  # (2+3j)
+int_num = int(3.14)  # converts the float 3.14 to an integer (truncates the decimal part)
+print(int_num)  # 3
+float_num = float(5)  # converts the integer 5 to a float
+print(float_num)  # 5.0
+
+
 
 # Text Type
+# ----------------
 # str
+name="Anshu"
+print(type(name))  # <class 'str'> (string is a sequence of characters enclosed
+
 
 # Sequence Types
+# ----------------
 # list, tuple, range
+r=range(1, 10)  # creates a range object representing the sequence of numbers from 1 to 9
+print(r)  # range(1, 10)
+print(type(r))  # <class 'range'> (range is a built-in sequence type that represents an immutable sequence of numbers)
+
+print(list(range(0,10,2)))  # [0, 2, 4, 6, 8] (creates a list of numbers from 0 to 9 with a step of 2)  
+print(tuple(range(0,10,3)))  # (0, 3, 6, 9) (creates a tuple of numbers from 0 to 9 with a step of 3)   
+
 
 # Mapping Type
+# ----------------
 # dict
+even=range(0, 10, 2)
+squared={x: x**2 for x in even}  # creates a dictionary where the keys are the even numbers from 0 to 8 and the values are their squares
+print(dict(enumerate("Anshu")))  # {0: 'A', 1: 'n', 2: 's', 3: 'h', 4: 'u'} (creates a dictionary by enumerating the characters in the string "Anshu", where the keys are the indices and the values are the characters at those indices)
+print(enumerate(even))  # <enumerate object at 0x7f8b8c8c8c8> (creates an enumerate object that can be used to iterate over the even numbers with their indices using a for loop or by converting it to a list or dictionary)
+
 
 # Set Types
+# ----------------
 # set, frozenset
+print(set(range(0,10,3))) # {0, 3, 6, 9} (creates a set of numbers from 0 to 9 with a step of 3)    
+
+
 
 # Boolean Type
+# ----------------
 # bool
+a=True
+b=False
+print(type(a))  # <class 'bool'> (boolean type represents one of two values: True or False)
+print(a and b)  # False (logical AND)
+print(a or b)   # True (logical OR)
+print(a+1)    # 2 (True is treated as 1 in arithmetic operations)
+print(b+1)    # 1 (False is treated as 0 in arithmetic operations
+print(int(a))  # 1 (converts True to 1)
+print(int(b))  # 0 (converts False to 0)
+
 
 # Binary Types
+# ----------------
 # bytes, bytearray, memoryview
 
 # None Type
+# ----------------
 # None
+x=None
+print(type(x))  # <class 'NoneType'>
+# print(x+1)  # TypeError: unsupported operand type(s) for +: 'NoneType' and 'int' (None cannot be used in arithmetic operations)
+print(int(x)+1)  # 1 (converts None to 0)
+
 
 a = 10          # int
 b = 3.14        # float
