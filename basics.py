@@ -7,23 +7,41 @@
 # arithmetic operators
 # +, -, *, /, //, %, **
 
+x,y=6,7
+print(x+y)  # 13 (addition)
+z=-x  # -6 (negation)
+
+
 # assignment operators
 # =, +=, -=, *=, /=, //=, %=, **=
 
-# comparison operators
+# comparison operators or relational operators ( returns a boolean value)
 # ==, !=, >, <, >=, <=
 
 # logical operators
 # and, or, not
+x,y=7,8
+# Assignment statements cannot be placed inside another expression.
+# z=x>5 and ((y=y+1)==10) # ERROR: SyntaxError: assignment expression cannot be used in a generator expression (because assignment statements cannot be used inside expressions, including logical expressions)
 
 # Bitwise Operators
 # &, |, ^, ~, <<, >>
 
 # Membership Operators
 # in, not in
+l=[1, 2, 3, 4, 5]
+print(3 in l)  # True (membership operator)
+print(6 not in l)  # True (membership operator)
 
 # Identity Operators
 # is, is not
+x=[1, 2, 3]
+y=[1, 2, 3]
+print(x is y)  # False (because x and y are different objects in memory, even though they have the same content)
+print(x == y)  # True (because x and y have the same content, but they are different objects in memory)
+z=x
+print(x is z)  # True (because x and z refer to the same object in memory)
+
 
 
 a = 10
