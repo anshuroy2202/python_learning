@@ -376,3 +376,6 @@ print('a+b',a+b)
 a=int(input("enter the number"))
 b=int(input("enter the number"))
 print('a+b',a+b)
+
+li=list(map(int,input('enter the list:').split()))
+print(li)
