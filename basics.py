@@ -359,3 +359,20 @@ values=['one', 'two', 'three']
 my_dict2=dict(zip(keys, values)) # {1: 'one', 2: 'two', 3: 'three'} (creates a dictionary by zipping together two lists of keys and values)
 print(my_dict2)
 
+
+
+
+
+
+
+# INPUT
+# --------------------------------
+a=input()
+b=input('Enter the value:')
+print('a+b',a+b)
+# it returns the string value
+
+# type casting is neccesary 
+a=int(input("enter the number"))
+b=int(input("enter the number"))
+print('a+b',a+b)
